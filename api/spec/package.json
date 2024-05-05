@@ -1,0 +1,17 @@
+{
+  "name": "@oa2/api-spec",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsp compile .",
+    "dev": "tsp compile . --watch"
+  },
+  "private": true,
+  "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3",
+  "devDependencies": {
+    "@typespec/compiler": "0.55.0",
+    "@typespec/http": "0.55.0",
+    "@typespec/openapi3": "0.55.0",
+    "@typespec/rest": "0.55.0"
+  }
+}
