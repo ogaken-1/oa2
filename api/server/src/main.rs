@@ -11,6 +11,6 @@ async fn run() -> std::io::Result<()> {
 #[tokio::main]
 async fn main() {
     if let Err(err) = run().await {
-        eprintln!("Application downed: {}", err);
+        eprintln!("Application failed: {}", err);
     }
 }
