@@ -22,12 +22,14 @@
             corepack enable --install-directory=$out/bin
           '';
         };
+        rustup = pkgs.rustup;
       in
       {
         devShell = pkgs.mkShell {
           buildInputs = [
             nodejs
             corepack
+            rustup
           ];
         };
       }
