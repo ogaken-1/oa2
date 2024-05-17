@@ -12,7 +12,7 @@
         inherit (nixpkgs.lib) optional;
         pkgs = import nixpkgs { inherit system; };
 
-        nodejs = pkgs.nodejs;
+        nodejs = pkgs.nodejs_22;
         corepack = pkgs.stdenv.mkDerivation {
           name = "corepack";
           buildInputs = [ nodejs ];
@@ -22,14 +22,14 @@
             corepack enable --install-directory=$out/bin
           '';
         };
-        rustup = pkgs.rustup;
       in
       {
         devShell = pkgs.mkShell {
           buildInputs = [
             nodejs
             corepack
-            rustup
+            pkgs.rustup
+            pkgs.sqldef
           ];
         };
       }
