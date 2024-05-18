@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -euo pipefail
+
+here="$(dirname "$0")"
+readonly here
+
+schema_file="${here}/schema.sql"
+readonly schema_file
+
+find_latest_migration_file () {
+  find "$here/migrations" -name '*.sql' |
+    sort --reverse |
+    head -n 1
+}
+
+get_file_created_commit_sha () {
+  local -r fname="$1"
+  local -r sha=$(git log --format=%H -- "$fname"  | tail -n 1)
+  echo "$sha"
+}
+
+get_previous_version_schema_file () {
+  local -r latest_migration_file="$(find_latest_migration_file)"
+  if [ -z "${latest_migration_file}" ]; then
+    return
+  fi
+  local -r sha=$(get_file_created_commit_sha "${latest_migration_file}")
+  if [ -z "${sha}" ]; then
+    return
+  fi
+  local -r temp_file=$(mktemp --suffix=.sql)
+  git show "${sha}:${schema_file}" >> "${temp_file}"
+  echo "${temp_file}"
+}
+
+get_timestamp () {
+  date +%Y%m%d%H%M%S
+}
+
+previous_version_schema_file=$(get_previous_version_schema_file)
+readonly previous_version_schema_file
+
+dest="${here}/migrations/$(get_timestamp).sql"
+readonly dest
+
+if [ -z "$previous_version_schema_file" ]; then
+  cp -p "$schema_file" "$dest"
+else
+  psqldef --dry-run --enable-drop-table "$previous_version_schema_file" < "$schema_file" > "$dest"
+  rm "$previous_version_schema_file"
+fi
