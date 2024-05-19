@@ -1,3 +1,5 @@
+create extension "uuid-ossp" with schema public;
+
 create table public.users (
   id uuid
     default uuid_generate_v4()
@@ -5,8 +7,6 @@ create table public.users (
     primary key,
   email text not null unique
 );
-
-create extension "uuid-ossp" with schema public;
 
 create table public.works (
   id uuid
