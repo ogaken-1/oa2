@@ -1,4 +1,5 @@
 mod get_user;
+mod test_utils;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
