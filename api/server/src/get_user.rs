@@ -37,10 +37,13 @@ mod tests {
     }
 
     async fn new_container() -> ContainerAsync<testcontainers_modules::postgres::Postgres> {
-        let image = testcontainers_modules::postgres::Postgres::default()
-            .with_user(PGUSER)
-            .with_password(PGPASSWORD)
-            .with_db_name(PGDATABASE);
+        let image = RunnableImage::from(
+            testcontainers_modules::postgres::Postgres::default()
+                .with_user(PGUSER)
+                .with_password(PGPASSWORD)
+                .with_db_name(PGDATABASE),
+        )
+        .with_tag("16.3-bookworm");
         AsyncRunner::start(image).await
     }
 
