@@ -1,4 +1,7 @@
-async fn run() -> std::io::Result<()> {
+mod get_user;
+
+#[tokio::main]
+async fn main() -> std::io::Result<()> {
     use axum::{routing::get, Router};
 
     let router = Router::new();
@@ -6,11 +9,4 @@ async fn run() -> std::io::Result<()> {
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await?;
     axum::serve(listener, app).await?;
     Ok(())
-}
-
-#[tokio::main]
-async fn main() {
-    if let Err(err) = run().await {
-        eprintln!("Application failed: {}", err);
-    }
 }
