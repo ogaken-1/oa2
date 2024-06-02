@@ -23,8 +23,11 @@ importers:
         specifier: 0.55.0
         version: 0.55.0(@typespec/compiler@0.55.0)(@typespec/http@0.55.0(@typespec/compiler@0.55.0))
 
-  client:
+  web-server:
     dependencies:
+      api-ts:
+        specifier: link:../api-ts
+        version: link:../api-ts
       solid-js:
         specifier: ^1.8.15
         version: 1.8.17
@@ -2306,8 +2309,8 @@ snapshots:
       '@vue/compiler-ssr': 3.4.19
       '@vue/shared': 3.4.19
       estree-walker: 2.0.2
-      magic-string: 0.30.8
-      postcss: 8.4.35
+      magic-string: 0.30.10
+      postcss: 8.4.38
       source-map-js: 1.2.0
 
   '@vue/compiler-ssr@3.4.19':
