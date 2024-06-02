@@ -24,7 +24,7 @@ WEB_SERVER_DIR := ./web-server
 WEB_SERVER_SRCS := $(shell git ls-files --directory $(WEB_SERVER_DIR))
 WEB_SERVER := $(WEB_SERVER_DIR)/dist
 ifneq ($(wildcard $(WEB_SERVER)/.),)
-	WEB_SERVER := $(shell find $(WEB_SERVER))
+	WEB_SERVER := $(shell find $(WEB_SERVER) -name 'index-*.js')
 endif
 
 .PHONY: build
