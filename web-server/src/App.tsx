@@ -4,8 +4,7 @@ function App() {
   return (
     <div
       class={css({
-        fontSize: "2xl",
-        fontWeight: "bold",
+        font: "2xl bold",
       })}
     >
       Hello panda!
