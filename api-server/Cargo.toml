@@ -7,8 +7,10 @@ edition = "2021"
 
 [dependencies]
 axum = "0.7.5"
+axum-extra = "0.9.3"
 sqlx = { version = "0.7.4", features = ["runtime-tokio", "postgres", "uuid"] }
 testcontainers = "0.16.7"
 testcontainers-modules = { version = "0.4.3", features = ["postgres"] }
 tokio = { version = "1.37.0", features = ["macros", "rt-multi-thread"] }
 tokio-test = "0.4.4"
+openapi = { path = "../api-axum" }

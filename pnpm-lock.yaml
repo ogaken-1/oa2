@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  api/spec:
+  api-spec:
     devDependencies:
       '@typespec/compiler':
         specifier: 0.55.0
