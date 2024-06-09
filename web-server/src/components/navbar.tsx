@@ -8,6 +8,7 @@ export default function NavBar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
+        fontWeight: "bold",
       })}
     >
       <A href="/">Index</A>
