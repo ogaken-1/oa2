@@ -2,7 +2,7 @@ import { Suspense, render } from "solid-js/web";
 import "./index.css";
 import { Route, Router } from "@solidjs/router";
 import NavBar from "./components/navbar";
-import NotFound from "./NotFound";
+import NotFound from "./not-found";
 import { lazy } from "solid-js";
 
 const Home = lazy(() => import("./routes/index"));
