@@ -69,13 +69,8 @@ function max(dates) {
   if (dates.length === 0) {
     return;
   }
-  let maxDate = new Date("0000-01-01");
-  for (const date of dates) {
-    if (maxDate < date) {
-      maxDate = date;
-    }
-  }
-  return maxDate;
+  // Date[] -> number[] -> number -> Date
+  return new Date(Math.max(...dates));
 }
 
 /**
