@@ -1,5 +1,5 @@
 {
-  "name": "@oa2/web-server",
+  "name": "@oa2/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
