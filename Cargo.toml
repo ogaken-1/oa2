@@ -1,3 +1,3 @@
 ["workspace"]
-members = ["api-server", "api-axum"]
+members = ["api-server", "api-spec/axum-client"]
 resolver = "2"

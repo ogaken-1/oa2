@@ -1,4 +1,3 @@
 packages:
-  - 'web-server'
-  - 'api-spec'
-  - 'api-ts'
+  - "web-server"
+  - "api-spec"

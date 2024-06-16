@@ -22,12 +22,15 @@ importers:
       '@typespec/rest':
         specifier: 0.55.0
         version: 0.55.0(@typespec/compiler@0.55.0)(@typespec/http@0.55.0(@typespec/compiler@0.55.0))
+      yargs:
+        specifier: ^17.7.2
+        version: 17.7.2
 
   web-server:
     devDependencies:
       '@ark-ui/solid':
         specifier: ^3.2.1
-        version: 3.2.1(@internationalized/date@3.5.4)(solid-js@1.8.17)
+        version: 3.2.1(@internationalized/date@3.5.3)(solid-js@1.8.17)
       '@eslint/js':
         specifier: ^9.4.0
         version: 9.4.0
@@ -40,9 +43,6 @@ importers:
       '@solidjs/router':
         specifier: ^0.13.5
         version: 0.13.5(solid-js@1.8.17)
-      api-ts:
-        specifier: link:../api-ts
-        version: link:../api-ts
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -58,6 +58,9 @@ importers:
       solid-js:
         specifier: ^1.8.17
         version: 1.8.17
+      ts-client:
+        specifier: link:../api-spec/ts-client
+        version: link:../api-spec/ts-client
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2581,7 +2584,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@ark-ui/anatomy@3.2.0(@internationalized/date@3.5.4)':
+  '@ark-ui/anatomy@3.2.0(@internationalized/date@3.5.3)':
     dependencies:
       '@zag-js/accordion': 0.51.1
       '@zag-js/anatomy': 0.51.1
@@ -2594,7 +2597,7 @@ snapshots:
       '@zag-js/color-utils': 0.51.1
       '@zag-js/combobox': 0.51.1
       '@zag-js/date-picker': 0.51.1
-      '@zag-js/date-utils': 0.51.1(@internationalized/date@3.5.4)
+      '@zag-js/date-utils': 0.51.1(@internationalized/date@3.5.3)
       '@zag-js/dialog': 0.51.1
       '@zag-js/editable': 0.51.1
       '@zag-js/file-upload': 0.51.1
@@ -2621,9 +2624,9 @@ snapshots:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  '@ark-ui/solid@3.2.1(@internationalized/date@3.5.4)(solid-js@1.8.17)':
+  '@ark-ui/solid@3.2.1(@internationalized/date@3.5.3)(solid-js@1.8.17)':
     dependencies:
-      '@ark-ui/anatomy': 3.2.0(@internationalized/date@3.5.4)
+      '@ark-ui/anatomy': 3.2.0(@internationalized/date@3.5.3)
       '@zag-js/accordion': 0.54.0
       '@zag-js/avatar': 0.54.0
       '@zag-js/carousel': 0.54.0
@@ -3886,10 +3889,6 @@ snapshots:
   '@zag-js/date-utils@0.51.1(@internationalized/date@3.5.3)':
     dependencies:
       '@internationalized/date': 3.5.3
-
-  '@zag-js/date-utils@0.51.1(@internationalized/date@3.5.4)':
-    dependencies:
-      '@internationalized/date': 3.5.4
 
   '@zag-js/date-utils@0.54.0(@internationalized/date@3.5.4)':
     dependencies:

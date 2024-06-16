@@ -13,4 +13,4 @@ testcontainers = "0.16.7"
 testcontainers-modules = { version = "0.4.3", features = ["postgres"] }
 tokio = { version = "1.37.0", features = ["macros", "rt-multi-thread"] }
 tokio-test = "0.4.4"
-openapi = { path = "../api-axum" }
+openapi = { path = "../api-spec/axum-client" }
