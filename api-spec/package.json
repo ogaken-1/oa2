@@ -8,10 +8,10 @@
   },
   "private": true,
   "devDependencies": {
-    "@typespec/compiler": "0.55.0",
-    "@typespec/http": "0.55.0",
-    "@typespec/openapi3": "0.55.0",
-    "@typespec/rest": "0.55.0",
+    "@typespec/compiler": "^0.57.0",
+    "@typespec/http": "^0.57.0",
+    "@typespec/openapi3": "^0.57.0",
+    "@typespec/rest": "^0.57.0",
     "yargs": "^17.7.2"
   }
 }
