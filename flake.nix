@@ -29,7 +29,6 @@
             nodejs
             corepack
             pkgs.prettierd
-            pkgs.rustup
             pkgs.sqldef
             pkgs.openapi-generator-cli
           ];
